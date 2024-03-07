@@ -51,18 +51,18 @@ navegador.execute_script('document.getElementById("fileInput").style.display="bl
 sleep(2) 
 
 navegador.find_element('xpath', '//input[@id="fileInput" and @name="imagem" and @type="file"]').send_keys(caminho_foto)  # Fazer o upload do arquivo
-  # Fazer o upload do arquivo
+ 
 
 sleep(2)
 
 
-# # # navegador.find_element('xpath',' //*[@id="root"]/main/div/div[4]/div/form/div[1]/p[2]').click() # visualizar publicação
+ # navegador.find_element('xpath',' //*[@id="root"]/main/div/div[4]/div/form/div[1]/p[2]').click() # visualizar publicação
 
-# # # sleep(2)
+# sleep(2)
 
-# # # navegador.find_element('xpath',' //*[@id=":ro:"]').click() # salvar publicação
+ # navegador.find_element('xpath',' //*[@id=":ro:"]').click() # salvar publicação
 
 
-# # sleep(40)
+# sleep(40)
 
 
