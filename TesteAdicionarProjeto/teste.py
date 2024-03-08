@@ -66,7 +66,7 @@ sleep(2)
 # Testar se  funcionalidade de salvar publicação
 navegador.find_element('xpath',' //*[@id=":r6:"]').click() # salvar publicação
 
-sleep(2)
+sleep(10)
 
 navegador.quit()
 
