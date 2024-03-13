@@ -36,7 +36,13 @@ navegador.find_element('xpath', '//input[@name="title" and @type="text"]').send_
 sleep(2)
 
 # Testar se  funcionalidade de adicionar tag
-navegador.find_element('xpath', '//input[@id="tags-outlined"]').send_keys('ux')
+
+# Encontre e clique no campo de entrada "TAGS"
+navegador.find_element('xpath', '//input[@id="tags-outlined"]').click()
+sleep(4)
+
+# Encontre e clique na primeira opção de TAG
+navegador.find_element('xpath', "//li[@role='option'][1]").click()
 
 sleep(2)
 
