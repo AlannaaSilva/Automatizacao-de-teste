@@ -56,4 +56,5 @@ navegador.find_element('xpath',' //*[@id=":r6:"]').click() # salvar publicação
 
 sleep(10)
 
+
 navegador.quit()

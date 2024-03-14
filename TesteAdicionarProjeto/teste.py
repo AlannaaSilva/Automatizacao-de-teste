@@ -2,6 +2,10 @@ from time import sleep
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service  # Importa a classe Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+
 caminho_foto = 'C:/Users/alann/OneDrive/Documentos/Automatização-de-teste/TesteAdicionarProjeto/imagens/imagem-teste.jpg' 
 
 
@@ -72,6 +76,19 @@ sleep(2)
 navegador.find_element('xpath',' //*[@id=":r6:"]').click() # salvar publicação
 
 sleep(10)
+
+# localizar o pop-up de sucesso pela classe e pelo texto
+try:
+    elemento_sucesso = WebDriverWait(navegador, 20).until(
+        EC.visibility_of_element_located((By.CSS_SELECTOR, ".sc-jSUdEz.jSKvph > p"))
+    )
+    # Verificamos se o texto do elemento encontrado é o esperado
+    assert "Projeto adicionado com sucesso!" in elemento_sucesso.text
+    print("Teste PASSOU: Pop-up de sucesso foi encontrado.")
+except Exception as e:
+    print(f"Teste FALHOU: Pop-up de sucesso não foi encontrado. Erro: {e}")
+
+sleep(2)
 
 navegador.quit()
 
